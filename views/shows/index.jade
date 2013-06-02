@@ -2,22 +2,31 @@
 
 html(lang="en")
   head
-    link(rel='stylesheet', href='/css/style.css')
     title Your Favorite Shows
+    script(src='jquery-2.0.2.min.js', type='text/javascript')
+    script(type='text/javascript').
+      // Local variables from server
+      var shows = !{JSON.stringify(shows)}
+    script(src='client.js', type='text/javascript')    
+    
 
   body
     .container
       center
         h1 Your Favorite Shows
-      .shows
-        img(src="http://ib2.huluim.com/show_key_art/#{show.id}?size=1600x600&region=US")
         
-        each show in episodes
-          a(href="http://hulu.com/watch/#{show.video.id}")
-            img(src="http://ib3.huluim.com/video/#{show.video.content_id}?size=476x268&region=us")
-            =show.video.title
+      .shows
+        
+        // a(href="http://hulu.com/#{show.canonical_name}", target="_blank")
+        //   img(src="http://ib2.huluim.com/show_key_art/#{show.id}?size=1600x600&region=US")
+
+        
+        // each episode in episodes
+        //   a(href="http://hulu.com/watch/#{episode.video.id}", target="_blank")
+        //     img(src="http://ib3.huluim.com/video/#{episode.video.content_id}?size=476x268&region=us")
+        //     =episode.video.title
       
       
       
-        =JSON.stringify(episodes)
+        // =JSON.stringify(episodes)
         

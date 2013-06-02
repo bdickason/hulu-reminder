@@ -20,12 +20,12 @@
       console.log(id);
       console.log(name);
       _results.push(getShow(id, function(callback) {
-        $.ajax({
-          url: callback
-        }).done(function() {
-          return console.log('done');
+        return $.ajax({
+          url: callback,
+          dataType: 'jsonp'
+        }).success(function(response) {
+          return console.log(response);
         });
-        return console.log(callback);
       }));
     }
     return _results;

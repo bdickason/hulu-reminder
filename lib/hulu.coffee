@@ -14,31 +14,19 @@ exports.Hulu = class Hulu
     @cfg = cfg
     @url_base = "http://www.hulu.com/api/2.0/videos.json?video_type[]=episodes"
   
-  getShows: (callback) ->
-    # Returns a list of shows
-    shows = {
-      "Parks and Recreation": 1968
-    }
-    #1968 - PArks
+  getShow: (show, callback) ->
+    # Returns the formatted URL for a given show. The browser will request each of these asynchronously from Hulu.
 
     url = @url_base
-        
+
     sort = "original_premiere_date"   # Sort by date
     order = "DESC"
     limit = 5
-    
-    # Add Shows
-    for name, id of shows
-      url += "&show_id[]=#{id}"
+
+    # Add Show
+    url += "&show_id[]=#{show}"
 
     # Add sorting and ordering
     url += "&sort=#{sort}&order=#{order}&items_per_page=#{limit}"
-    
-    request url, (err, response, body) ->
-      if !err and response.statusCode is 200
-        callback JSON.parse response.body # Convert string to JSON and return it
-      else
-        callback err
-    
 
-    
+    callback url

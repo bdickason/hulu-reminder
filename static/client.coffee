@@ -22,8 +22,8 @@ $ ->
     console.log name
     getShow id, (callback) ->
       $.ajax({
-        url: callback
+        url: callback,
+        dataType:'jsonp'
         })
-        .done ->
-          console.log 'done'
-      console.log callback
+        .success (response) ->
+          console.log response

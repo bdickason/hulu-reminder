@@ -17,8 +17,13 @@ app.get '/', (req, res) ->
   res.send 'Hulu!'
 
 app.get '/shows', (req, res) ->
-  hulu.getShows (callback) ->
-    res.render 'shows/index', { episodes: callback.data, show: callback.data[0].video.show }
-        
+  shows = {
+    7529: "New Girl",
+    1968: "Parks & Recreation"
+  }
+      
+  res.render 'shows/index', { shows: shows }
+  # res.render 'shows/index', { episodes: callback.data, show: callback.data[0].video.show }
+  
 ### Start the App ###
 app.listen "#{cfg.PORT}"

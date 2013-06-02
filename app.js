@@ -35,11 +35,13 @@
   });
 
   app.get('/shows', function(req, res) {
-    return hulu.getShows(function(callback) {
-      return res.render('shows/index', {
-        episodes: callback.data,
-        show: callback.data[0].video.show
-      });
+    var shows;
+    shows = {
+      7529: "New Girl",
+      1968: "Parks & Recreation"
+    };
+    return res.render('shows/index', {
+      shows: shows
     });
   });
 
