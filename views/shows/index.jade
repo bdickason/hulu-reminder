@@ -1,0 +1,23 @@
+!!! 5
+
+html(lang="en")
+  head
+    link(rel='stylesheet', href='/css/style.css')
+    title Your Favorite Shows
+
+  body
+    .container
+      center
+        h1 Your Favorite Shows
+      .shows
+        img(src="http://ib2.huluim.com/show_key_art/#{show.id}?size=1600x600&region=US")
+        
+        each show in episodes
+          a(href="http://hulu.com/watch/#{show.video.id}")
+            img(src="http://ib3.huluim.com/video/#{show.video.content_id}?size=476x268&region=us")
+            =show.video.title
+      
+      
+      
+        =JSON.stringify(episodes)
+        

@@ -36,7 +36,10 @@
 
   app.get('/shows', function(req, res) {
     return hulu.getShows(function(callback) {
-      return res.send(callback);
+      return res.render('shows/index', {
+        episodes: callback.data,
+        show: callback.data[0].video.show
+      });
     });
   });
 

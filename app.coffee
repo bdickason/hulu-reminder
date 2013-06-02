@@ -18,7 +18,7 @@ app.get '/', (req, res) ->
 
 app.get '/shows', (req, res) ->
   hulu.getShows (callback) ->
-    res.send callback
+    res.render 'shows/index', { episodes: callback.data, show: callback.data[0].video.show }
         
 ### Start the App ###
 app.listen "#{cfg.PORT}"
