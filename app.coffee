@@ -23,7 +23,6 @@ app.get '/shows', (req, res) ->
   }
       
   res.render 'shows/index', { shows: shows }
-  # res.render 'shows/index', { episodes: callback.data, show: callback.data[0].video.show }
   
 ### Start the App ###
 app.listen "#{cfg.PORT}"

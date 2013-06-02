@@ -16,10 +16,10 @@ $ ->
     url += "&sort=#{sort}&order=#{order}&items_per_page=#{limit}"
     
     callback url
+    
+    
   console.log shows
   for id, name of shows
-    console.log id
-    console.log name
     getShow id, (callback) ->
       $.ajax({
         url: callback,

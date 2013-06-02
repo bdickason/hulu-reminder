@@ -17,8 +17,6 @@
     _results = [];
     for (id in shows) {
       name = shows[id];
-      console.log(id);
-      console.log(name);
       _results.push(getShow(id, function(callback) {
         return $.ajax({
           url: callback,
