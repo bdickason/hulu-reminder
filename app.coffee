@@ -14,7 +14,11 @@ hulu = new Hulu cfg
 
 ### Routes ###      
 app.get '/', (req, res) ->
-  console.log 'Hulu!'
+  res.send 'Hulu!'
+
+app.get '/shows', (req, res) ->
+  hulu.getShows (callback) ->
+    res.send callback
         
 ### Start the App ###
 app.listen "#{cfg.PORT}"

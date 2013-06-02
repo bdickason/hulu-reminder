@@ -31,7 +31,13 @@
 
 
   app.get('/', function(req, res) {
-    return console.log('Hulu!');
+    return res.send('Hulu!');
+  });
+
+  app.get('/shows', function(req, res) {
+    return hulu.getShows(function(callback) {
+      return res.send(callback);
+    });
   });
 
   /* Start the App
