@@ -9,7 +9,6 @@ exports.Hulu = class Hulu
     url_base = "http://www.hulu.com/api/2.0/videos.json?video_type[]=episodes"
     
     shows = {
-      "Parks and Recreation": 1968,
       "New Girl": 7529
     }
     
@@ -26,7 +25,8 @@ exports.Hulu = class Hulu
 
     # Add sorting and ordering
     url += "&sort=#{sort}&order=#{order}"
-    callback url
-
-  
+    
+    
+    
+    callback data
     
