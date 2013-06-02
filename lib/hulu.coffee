@@ -17,8 +17,9 @@ exports.Hulu = class Hulu
   getShows: (callback) ->
     # Returns a list of shows
     shows = {
-      "New Girl": 7529
+      "Parks and Recreation": 1968
     }
+    #1968 - PArks
 
     url = @url_base
         
