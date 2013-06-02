@@ -1,0 +1,28 @@
+{
+    "name": "hulu-reminder"
+  , "version": "0.0.1"
+  , "description": "A simple app to remind me when new shows that I watch are available on hulu."
+  , "homepage": ""
+  , "keywords": ["hulu"]
+  , "author": "Brad Dickason <dickason@gmail.com>"
+  , "contributors": [
+        { "name": "Brad Dickason", "email": "dickason@gmail.com" }
+    ]
+  , "repository":{
+        "type": "git"
+      , "url": "https://github.com/bdickason/hulu-reminder"
+    }
+  , "dependencies": {
+    "express": "3.2.5",
+    "coffee-script": "1.6.2"
+    }
+  , "devDependencies": {
+        "mocha": "1.10.0",
+    		"should": "1.2.2"
+    }
+  , "main": "index"
+  , "engines": { "node": ">= 0.4.0" }
+  , "scripts": {
+        "test": "make test"
+    }
+}
