@@ -1,4 +1,4 @@
-{TCPConnection, xbmc} = require 'xbmc'
+{TCPConnection, XbmcApi} = require 'xbmc'
 
 ### Handle integration with XBMC on Apple TV ###
 
@@ -10,13 +10,17 @@ exports.Xbmc = class Xbmc
       host: '192.168.1.112'
       port: 8080,
       verbose: true
-    @xbmc = new xbmc
-    @xbmc.setConnection @connection
-    @xbmc.on 'connection:open', ->
+    @xbmcApi = new XbmcApi
+      silent: true,
+      connection: @connection
+    @xbmcApi.on 'connection:open', =>
       console.log 'Connection!'
-      @xbmc.message 'test!'
+      @xbmcApi.message 'test!'
+    @xbmcApi.on 'connection:error', ->
+      console.log 'error!'
 
   getAddons: (result) ->
+    console.log 'blah'
     
     ### request 'Addons.GetAddons', [], (err, error, response) ->
       console.log 'got here'
