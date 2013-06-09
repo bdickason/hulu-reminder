@@ -16,7 +16,8 @@
     "express": "3.2.5",
     "coffee-script": "1.6.2",
 		"request": "2.21.0",
-		"jade": "0.31.1"
+		"jade": "0.31.1",
+		"airplay": "0.0.3"
     }
   , "devDependencies": {
         "mocha": "1.10.0",
